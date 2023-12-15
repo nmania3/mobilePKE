@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraL/TFG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .black-container {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+        }
+
+        .menu {
+            display: none;
+            position: sticky;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .btn-secondary {
+            background-color: black;
+            color: white;
+            border-color: black;
+        }
+        
+        .btn-primary {
+            background-color: black;
+            color: white;
+            border-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="black-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <br>
+                    <h1>GrAL/TFG</h1><br>
+                    <h3>EHU/UPV</h3>
+                </div>
+                <div class="col-6">
+                    <img src="https://www.ehu.eus/documents/2947353/2967459/logo-solo-con-simbolo-media.jpg/7f8c3889-48f1-4d52-b762-e9ced096a2fd?t=1412933844000" class="img-fluid" alt="Imagen">
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black; ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>   
+        <div class="collapse navbar-collapse" id="navbarNav" style="background-color: #000; border-radius: 10px;">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="sarrera.html" style="color:white; padding: 10px;"> Sarrera</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="egutegia.html" style="color:white; padding: 10px;"> Egutegia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="arautegia.html" style="color:white; padding: 10px;"> Arautegia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="memoriak.html" style="color:white; padding: 10px;"> Beste urtetako memoriak</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galdetegia.html" style="color:white; padding: 10px;"> Galdetegia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html" style="color:white; padding: 10px;"> About us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="content">
+            <div style="border-color: black; border-width: 5px; border-style:solid;">
+                <h1>GALDETEGIA</h1>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+            <form>
+                <div class="form-group">
+                <label>Pregunta 1: ¿Cuál es tu color favorito?</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="color" id="color1" autocomplete="off" value="Rojo"> Rojo
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="color" id="color2" autocomplete="off" value="Azul"> Azul
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="color" id="color3" autocomplete="off" value="Verde"> Verde
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="color" id="color4" autocomplete="off" value="Negro"> Negro
+                    </label>
+                </div>
+                </div>
+                
+                <div class="form-group">
+                <label>Pregunta 2: ¿Cuál es tu animal favorito?</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="animal" id="animal1" autocomplete="off" value="Perro"> Perro
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="animal" id="animal2" autocomplete="off" value="Gato"> Gato
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="animal" id="animal3" autocomplete="off" value="Oso"> Oso
+                    </label>
+                    <label class="btn btn-secondary">
+                    <input type="radio" name="animal" id="animal4" autocomplete="off" value="Loro"> Loro
+                    </label>
+                </div>
+                </div>
+                
+                <!-- Puedes agregar más preguntas y respuestas aquí -->
+        
+                <button type="submit" class="btn btn-primary">Bidali</button>
+                <br><br>
+                <p id="resultado"></p>
+            </form>
+            </div>
+        </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const resultadoText = document.getElementById("resultado");
+    
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+    
+                // Obtener respuestas seleccionadas por el usuario
+                const respuestasUsuario = {
+                    pregunta1: document.querySelector('input[name="color"]:checked'),
+                    pregunta2: document.querySelector('input[name="animal"]:checked'),
+                    // Agrega más respuestas según se añadan más preguntas al formulario
+                };
+    
+                // Verificar si todas las preguntas fueron respondidas
+                if (Object.values(respuestasUsuario).every(respuesta => respuesta !== null)) {
+                    // Respuestas correctas
+                    const respuestasCorrectas = {
+                        pregunta1: "Rojo",
+                        pregunta2: "Perro",
+                        // Puedes agregar más respuestas aquí según se añadan más preguntas al formulario
+                    };
+    
+                    // Calcular puntuación
+                    let puntuacion = 0;
+                    for (const pregunta in respuestasCorrectas) {
+                        if (respuestasCorrectas[pregunta] === respuestasUsuario[pregunta].value) {
+                            puntuacion++;
+                        }
+                    }
+    
+                    // Mostrar puntuación debajo del botón
+                    resultadoText.textContent = `Tu puntuación es: ${puntuacion}/${
+                        Object.keys(respuestasCorrectas).length
+                    }`;
+                    resultadoText.style.color = "black"; // Cambiar el color del texto si lo deseas
+                } else {
+                    resultadoText.textContent = "Por favor, responde a todas las preguntas antes de enviar.";
+                    resultadoText.style.color = "red"; // Cambiar el color del texto si lo deseas
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
+
